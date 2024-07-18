@@ -15,7 +15,7 @@ outputs:
     description: 'ID do comentário criado'
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: "docker://fabricioveronez/action-docker:v1"
   args:
     - ${{ inputs.GITHUB_TOKEN }}
     - ${{ inputs.issue-id }}

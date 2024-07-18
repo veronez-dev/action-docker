@@ -17,3 +17,4 @@ runs:
     - '${{ inputs.GITHUB_TOKEN }}'
     - '${{ inputs.ISSUE_ID }}'
     - '${{ inputs.COMMENT }}'
+    - '${{ inputs.GITHUB_REPOSITORY }}'

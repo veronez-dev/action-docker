@@ -1,14 +1,16 @@
-FROM ubuntu:22.04
-
-WORKDIR /app
+# Use uma imagem base do Linux. Aqui, usamos o Debian por ser uma escolha popular.
+FROM debian:latest
 
 # Instale as dependências necessárias
-RUN apt update && apt install -y curl jq
+RUN apt-get update && \
+    apt-get install -y curl jq && \
+    rm -rf /var/lib/apt/lists/*
 
 # Copie o script shell para o container
-COPY main.sh ./main.sh
+COPY main.sh /main.sh
 
-RUN chmod +x ./main.sh
+# Torne o script executável
+RUN chmod +x /main.sh
 
-# Defina o ponto de entrada do container
-ENTRYPOINT ["./main.sh"]
+# Defina o script como ponto de entrada
+ENTRYPOINT ["/main.sh"]

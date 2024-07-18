@@ -1,22 +1,19 @@
-name: 'Workflow Evento'
-description: 'Adiciona um comentário a um issue ou pull request'
+name: 'Comentar em Issue'
+description: 'Adiciona um comentário a uma issue do GitHub'
 inputs:
   GITHUB_TOKEN:
-    description: 'Token do GitHub'
+    description: 'Token de autenticação do GitHub'
     required: true
-  issue-id:
-    description: 'ID do issue ou pull request'
+  ISSUE_ID:
+    description: 'ID da issue a ser comentada'
     required: true
-  comment:
-    description: 'Comentário a ser adicionado'
+  COMMENT:
+    description: 'Conteúdo do comentário'
     required: true
-outputs:
-  comment-id:
-    description: 'ID do comentário criado'
 runs:
   using: 'docker'
-  image: "docker://fabricioveronez/action-docker:v1"
+  image: 'Dockerfile'
   args:
-    - ${{ inputs.GITHUB_TOKEN }}
-    - ${{ inputs.issue-id }}
-    - ${{ inputs.comment }}
+    - '${{ inputs.GITHUB_TOKEN }}'
+    - '${{ inputs.ISSUE_ID }}'
+    - '${{ inputs.COMMENT }}'

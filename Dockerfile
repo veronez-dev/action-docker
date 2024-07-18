@@ -1,9 +1,9 @@
-FROM alpine:3.12
+FROM ubuntu:22.04
 
 WORKDIR /app
 
 # Instale as dependências necessárias
-RUN apk add --no-cache curl jq
+RUN apt update && apt install -y curl jq
 
 # Copie o script shell para o container
 COPY main.sh ./main.sh

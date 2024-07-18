@@ -10,6 +10,9 @@ inputs:
   COMMENT:
     description: 'Conteúdo do comentário'
     required: true
+  GITHUB_REPOSITORY:
+    description: 'Conteúdo do comentário'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -17,4 +20,4 @@ runs:
     - '${{ inputs.GITHUB_TOKEN }}'
     - '${{ inputs.ISSUE_ID }}'
     - '${{ inputs.COMMENT }}'
-    - '${{ inputs.GITHUB_REPOSITORY }}'
+    - '${{ github.repository }}'

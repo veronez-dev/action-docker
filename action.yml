@@ -20,4 +20,4 @@ runs:
     - '${{ inputs.GITHUB_TOKEN }}'
     - '${{ inputs.ISSUE_ID }}'
     - '${{ inputs.COMMENT }}'
-    - '${{ github.repository }}'
+    - '${{ inputs.GITHUB_REPOSITORY }}'

@@ -13,6 +13,10 @@ inputs:
   GITHUB_REPOSITORY:
     description: 'Conteúdo do comentário'
     required: true
+outputs:
+  comment-id:
+    description: 'Id do comentário'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'

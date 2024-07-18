@@ -11,4 +11,4 @@ COPY main.sh ./main.sh
 RUN chmod +x ./main.sh
 
 # Defina o ponto de entrada do container
-ENTRYPOINT ["./main.sh"]
+CMD ["./main.sh"]

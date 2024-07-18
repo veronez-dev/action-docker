@@ -8,7 +8,7 @@ COMMENT=$3
 # Inicialize o cliente do GitHub
 response=$(curl -s -X POST -H "Authorization: token ${GITHUB_TOKEN}" \
     -H "Accept: application/vnd.github.v3+json" \
-    https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${ISSUE_ID}/comments \
+    https://api.github.com/repos/veronez-dev/action-teste/issues/${ISSUE_ID}/comments \
     -d "{\"body\": \"${COMMENT}\"}")
 
 # Obtenha o ID do comentário criado
